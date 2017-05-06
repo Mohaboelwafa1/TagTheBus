@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class TakePictureView: UIViewController , UITextFieldDelegate {
     
@@ -18,7 +19,9 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIButton!
     
  
-    var comingImage : UIImage!
+    var comingImage     : UIImage!
+    var comingStationID : String!
+    
     override func viewDidLoad() {
 
         
@@ -49,37 +52,58 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     }
     
     
+    // save image to documents
     @IBAction func saveAction(_ sender: Any) {
         
+        createDirectory()
+        
         let fileManager = FileManager.default
-        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(titleTxtField.text! + timeLabel.text!).jpg")
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(self.comingStationID!)/\(titleTxtField.text!).jpg")
+        
+        print("=====")
+        print(paths)
+        
         let image = comingImage
         print(paths)
         let imageData = UIImageJPEGRepresentation(image!, 0.5)
         fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
-     
-        self.getImage()
         
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let savedImage = SavedImage(context: context) // Link Images & Context
+        
+        savedImage.stationID = comingStationID
+        savedImage.name = titleTxtField.text
+        savedImage.time = timeLabel.text
+        
+        
+        
+        // Save the data to coredata
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+     
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func getImage(){
+    
+    func createDirectory(){
         let fileManager = FileManager.default
-        let imagePAth = (self.getDirectoryPath() as NSString).appendingPathComponent("\(titleTxtField.text! + timeLabel.text!).jpg")
-        if fileManager.fileExists(atPath: imagePAth){
-            print("__imagePAth_____\(imagePAth)")
-            //self.imageView.image = UIImage(contentsOfFile: imagePAth)
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(self.comingStationID!)")
+        if !fileManager.fileExists(atPath: paths){
+            try! fileManager.createDirectory(atPath: paths, withIntermediateDirectories: true, attributes: nil)
+            
+            print("New Directory has been created.!!")
+            
         }else{
-            print("No Image")
+            print("Already Directory created.")
         }
     }
     
-    func getDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
+    
+    
     
     @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

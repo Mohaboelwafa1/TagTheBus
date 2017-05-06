@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		578D674DAD6CF42C0DFA6C03 /* Pods_TagTheBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB59A8EBC1BA2D47776F214B /* Pods_TagTheBus.framework */; };
+		59059EB11EBD90CF004C9B25 /* TagTheBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59059EAF1EBD90CF004C9B25 /* TagTheBus.xcdatamodeld */; };
 		59CB1B381EB9BC7C00BCA526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB1B371EB9BC7C00BCA526 /* AppDelegate.swift */; };
 		59CB1B3A1EB9BC7C00BCA526 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB1B391EB9BC7C00BCA526 /* ContainerView.swift */; };
 		59CB1B3D1EB9BC7C00BCA526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CB1B3B1EB9BC7C00BCA526 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59059EB01EBD90CF004C9B25 /* TagTheBus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TagTheBus.xcdatamodel; sourceTree = "<group>"; };
 		59CB1B341EB9BC7B00BCA526 /* TagTheBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagTheBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CB1B371EB9BC7C00BCA526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59CB1B391EB9BC7C00BCA526 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		59CB1B361EB9BC7B00BCA526 /* TagTheBus */ = {
 			isa = PBXGroup;
 			children = (
+				59059EAF1EBD90CF004C9B25 /* TagTheBus.xcdatamodeld */,
 				59CB1B4C1EB9BCBE00BCA526 /* Assets */,
 				59CB1B4B1EB9BCB700BCA526 /* View */,
 				59CB1B4A1EB9BCB000BCA526 /* Controller */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59CB1B3A1EB9BC7C00BCA526 /* ContainerView.swift in Sources */,
+				59059EB11EBD90CF004C9B25 /* TagTheBus.xcdatamodeld in Sources */,
 				59CB1B381EB9BC7C00BCA526 /* AppDelegate.swift in Sources */,
 				59D1FA2E1EBAE3FD00706C04 /* ListOfImages.swift in Sources */,
 				59CB1B501EB9BF0B00BCA526 /* ListView.swift in Sources */,
@@ -444,6 +448,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59059EAF1EBD90CF004C9B25 /* TagTheBus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59059EB01EBD90CF004C9B25 /* TagTheBus.xcdatamodel */,
+			);
+			currentVersion = 59059EB01EBD90CF004C9B25 /* TagTheBus.xcdatamodel */;
+			name = TagTheBus.xcdatamodeld;
+			path = ../TagTheBus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59CB1B2C1EB9BC7900BCA526 /* Project object */;
 }

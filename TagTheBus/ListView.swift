@@ -57,7 +57,7 @@ class ListView: UIViewController , UITableViewDelegate , UITableViewDataSource {
         
         // navigate to the book list page with the full data
         let imagesListView:ListOfImages = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListOfImages") as! ListOfImages
-        
+        imagesListView.stationID = ListOfStations.sharedInstance.stationsList[indexPath.row].id
         self.present(imagesListView, animated: false, completion: nil)
         
         
@@ -65,6 +65,8 @@ class ListView: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     
     func getDataFromServer(){
+        print("------CCCCCC")
+        
         Alamofire.request("http://barcelonaapi.marcpous.com/bus/nearstation/latlon/41.3985182/2.1917991/1.json").responseJSON { response in
             
             if let json = response.result.value {
