@@ -48,6 +48,9 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
         
         timeLabel.text = result + time
         
+        NotificationCenter.default.addObserver(self, selector: #selector(TakePictureView.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TakePictureView.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
     
     
@@ -56,6 +59,17 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
         
         // Create directory to each sation
         createDirectory()
+        
+        // chack image title
+        let validTitle = self.CheckImageName(imageTitle: titleTxtField.text!)
+        
+        if (validTitle == false) {
+            
+            let alert = UIAlertView(title: "Error", message: "Please choose another valid title", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            
+            return
+        }
         
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(self.comingStationID!)/\(titleTxtField.text!).jpg")
@@ -100,6 +114,32 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     }
     
     
+    func CheckImageName(imageTitle : String) -> Bool {
+        
+        if ((titleTxtField.text?.characters.count)! > 0) {
+            
+            let fileManager = FileManager.default
+            let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(self.comingStationID!)/\(imageTitle).jpg")
+            
+            
+            if !fileManager.fileExists(atPath: paths){
+                
+                print("Title is valid to use")
+                return true
+                
+            }else{
+                print("Name is not valid.")
+                return false
+            }
+            
+            
+        }
+        else {
+            
+            return false
+        }
+    }
+    
     
     // Close page
     @IBAction func cancelAction(_ sender: Any) {
@@ -110,6 +150,25 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    
+    // Move view up while typing image name
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    // Move view down when finish editing image title
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     
     
