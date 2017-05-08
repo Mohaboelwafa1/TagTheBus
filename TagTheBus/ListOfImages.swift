@@ -60,6 +60,10 @@ class ListOfImages: UIViewController , UITableViewDataSource , UITableViewDelega
         do {
             images = try context.fetch(SavedImage.fetchRequest())
             
+            if (images.count == 0) {
+                return
+            }
+            
             // Loop in the full array : if station IDs are equal append the image to the current image array
             for index in 0...images.count-1 {
                 
@@ -169,11 +173,13 @@ class ListOfImages: UIViewController , UITableViewDataSource , UITableViewDelega
         
         if editingStyle == .delete {
             
-            currentStationImages.remove(at: indexPath.row)               // Delete image from sub array
+            
             
             let index = currentStationImages[indexPath.row].imageIndex   // get index of image in the main array (DB)
             let image = images[Int(index)]
             context.delete(image)                                        // Delete image from DB
+            
+            currentStationImages.remove(at: indexPath.row)               // Delete image from sub array
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
