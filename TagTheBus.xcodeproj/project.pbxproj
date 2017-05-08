@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		578D674DAD6CF42C0DFA6C03 /* Pods_TagTheBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB59A8EBC1BA2D47776F214B /* Pods_TagTheBus.framework */; };
 		59059EB11EBD90CF004C9B25 /* TagTheBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59059EAF1EBD90CF004C9B25 /* TagTheBus.xcdatamodeld */; };
+		59B082401EBEFB07001A2C31 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B0823F1EBEFB07001A2C31 /* ImageModel.swift */; };
 		59CB1B381EB9BC7C00BCA526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB1B371EB9BC7C00BCA526 /* AppDelegate.swift */; };
 		59CB1B3A1EB9BC7C00BCA526 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB1B391EB9BC7C00BCA526 /* ContainerView.swift */; };
 		59CB1B3D1EB9BC7C00BCA526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CB1B3B1EB9BC7C00BCA526 /* Main.storyboard */; };
@@ -22,10 +23,13 @@
 		59D1FA2E1EBAE3FD00706C04 /* ListOfImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1FA2D1EBAE3FD00706C04 /* ListOfImages.swift */; };
 		59D1FA301EBAE47600706C04 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 59D1FA2F1EBAE47600706C04 /* back.png */; };
 		59D1FA321EBAEC3F00706C04 /* TakePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1FA311EBAEC3F00706C04 /* TakePictureView.swift */; };
+		59F30C811EC020F20008F1C3 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F30C801EC020F20008F1C3 /* share.png */; };
+		59F30C831EC021C70008F1C3 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F30C821EC021C70008F1C3 /* ImageViewer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59059EB01EBD90CF004C9B25 /* TagTheBus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TagTheBus.xcdatamodel; sourceTree = "<group>"; };
+		59B0823F1EBEFB07001A2C31 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		59CB1B341EB9BC7B00BCA526 /* TagTheBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagTheBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CB1B371EB9BC7C00BCA526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59CB1B391EB9BC7C00BCA526 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 		59D1FA2D1EBAE3FD00706C04 /* ListOfImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfImages.swift; sourceTree = "<group>"; };
 		59D1FA2F1EBAE47600706C04 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		59D1FA311EBAEC3F00706C04 /* TakePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureView.swift; sourceTree = "<group>"; };
+		59F30C801EC020F20008F1C3 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		59F30C821EC021C70008F1C3 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		AA9DD8F16BC2A739471A2E45 /* Pods-TagTheBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagTheBus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TagTheBus/Pods-TagTheBus.debug.xcconfig"; sourceTree = "<group>"; };
 		F090151C25B7D20A9C94D5C6 /* Pods-TagTheBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagTheBus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TagTheBus/Pods-TagTheBus.release.xcconfig"; sourceTree = "<group>"; };
 		FB59A8EBC1BA2D47776F214B /* Pods_TagTheBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TagTheBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				59D1FA291EBAD67500706C04 /* StationModel.swift */,
+				59B0823F1EBEFB07001A2C31 /* ImageModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 				59CB1B4F1EB9BF0B00BCA526 /* ListView.swift */,
 				59D1FA2D1EBAE3FD00706C04 /* ListOfImages.swift */,
 				59D1FA311EBAEC3F00706C04 /* TakePictureView.swift */,
+				59F30C821EC021C70008F1C3 /* ImageViewer.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 		59CB1B4C1EB9BCBE00BCA526 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				59F30C801EC020F20008F1C3 /* share.png */,
 				59D1FA2F1EBAE47600706C04 /* back.png */,
 				59D1FA2B1EBAE00700706C04 /* add.png */,
 				59CB1B4D1EB9BDE100BCA526 /* arrow.png */,
@@ -210,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F30C811EC020F20008F1C3 /* share.png in Resources */,
 				59CB1B421EB9BC7C00BCA526 /* LaunchScreen.storyboard in Resources */,
 				59D1FA301EBAE47600706C04 /* back.png in Resources */,
 				59CB1B3F1EB9BC7C00BCA526 /* Assets.xcassets in Resources */,
@@ -277,7 +287,9 @@
 				59CB1B3A1EB9BC7C00BCA526 /* ContainerView.swift in Sources */,
 				59059EB11EBD90CF004C9B25 /* TagTheBus.xcdatamodeld in Sources */,
 				59CB1B381EB9BC7C00BCA526 /* AppDelegate.swift in Sources */,
+				59F30C831EC021C70008F1C3 /* ImageViewer.swift in Sources */,
 				59D1FA2E1EBAE3FD00706C04 /* ListOfImages.swift in Sources */,
+				59B082401EBEFB07001A2C31 /* ImageModel.swift in Sources */,
 				59CB1B501EB9BF0B00BCA526 /* ListView.swift in Sources */,
 				59D1FA281EBAD53000706C04 /* ListOfStations.swift in Sources */,
 				59D1FA321EBAEC3F00706C04 /* TakePictureView.swift in Sources */,

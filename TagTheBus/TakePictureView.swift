@@ -24,14 +24,13 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     
     override func viewDidLoad() {
 
-        
+        // Title txt field
         self.titleTxtField.delegate = self
         
         // get image from camera
         imageView.image = comingImage
         
         // get current date and time
-        
         let date = Date()
         let formatter = DateFormatter()
         
@@ -55,13 +54,14 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     // save image to documents
     @IBAction func saveAction(_ sender: Any) {
         
+        // Create directory to each sation
         createDirectory()
         
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(self.comingStationID!)/\(titleTxtField.text!).jpg")
         
-        print("=====")
-        print(paths)
+//        print("=====")
+//        print(paths)
         
         let image = comingImage
         print(paths)
@@ -101,12 +101,12 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
     
     
     
-    
+    // Close page
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    // Close keypad
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

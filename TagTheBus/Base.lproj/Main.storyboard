@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -275,10 +276,84 @@
             </objects>
             <point key="canvasLocation" x="1792.5" y="150"/>
         </scene>
+        <!--Image Viewer-->
+        <scene sceneID="WxE-5k-QkW">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewer" id="D3C-OF-J4y" customClass="ImageViewer" customModule="TagTheBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oNn-8w-oLw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xwo-oM-fMn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MAP-C1-Bxy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mle-fV-HKr">
+                                <rect key="frame" x="284" y="20" width="20" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dDs-cj-U1f"/>
+                                    <constraint firstAttribute="width" constant="20" id="ihK-EF-Vzm"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="share.png"/>
+                                <connections>
+                                    <action selector="shareImage:" destination="D3C-OF-J4y" eventType="touchUpInside" id="ft7-WJ-jIA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdt-aN-tgP">
+                                <rect key="frame" x="0.0" y="56" width="320" height="512"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bag-cF-I6r">
+                                <rect key="frame" x="100" y="20" width="110" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szw-ty-Usc">
+                                <rect key="frame" x="6" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0Dw-bh-etO"/>
+                                    <constraint firstAttribute="height" constant="30" id="oFS-t8-z1t"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back.png"/>
+                                <connections>
+                                    <action selector="backFunction:" destination="D3C-OF-J4y" eventType="touchUpInside" id="0IW-lZ-WGe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xwo-oM-fMn" firstAttribute="top" secondItem="jdt-aN-tgP" secondAttribute="bottom" id="7Ky-29-5WZ"/>
+                            <constraint firstItem="jdt-aN-tgP" firstAttribute="top" secondItem="bag-cF-I6r" secondAttribute="bottom" constant="10" id="9mX-ar-XeM"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="top" secondItem="bag-cF-I6r" secondAttribute="top" id="E7p-X0-3Wr"/>
+                            <constraint firstItem="bag-cF-I6r" firstAttribute="leading" secondItem="Szw-ty-Usc" secondAttribute="trailing" constant="64" id="ELj-Us-b8j"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="baseline" secondItem="Szw-ty-Usc" secondAttribute="baseline" id="Foc-ug-uId"/>
+                            <constraint firstItem="jdt-aN-tgP" firstAttribute="leading" secondItem="MAP-C1-Bxy" secondAttribute="leadingMargin" constant="-16" id="LjD-uW-xS3"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="centerY" secondItem="bag-cF-I6r" secondAttribute="centerY" id="cHr-Ap-uld"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="firstBaseline" secondItem="Szw-ty-Usc" secondAttribute="firstBaseline" id="gQX-EN-CLy"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="leading" secondItem="bag-cF-I6r" secondAttribute="trailing" constant="74" id="gQh-Zx-4BM"/>
+                            <constraint firstItem="Mle-fV-HKr" firstAttribute="trailing" secondItem="MAP-C1-Bxy" secondAttribute="trailingMargin" id="kZQ-qa-eBR"/>
+                            <constraint firstItem="Szw-ty-Usc" firstAttribute="top" secondItem="oNn-8w-oLw" secondAttribute="bottom" id="nBE-ZN-qme"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jdt-aN-tgP" secondAttribute="trailing" constant="-16" id="okv-Ej-rxl"/>
+                            <constraint firstItem="bag-cF-I6r" firstAttribute="top" secondItem="oNn-8w-oLw" secondAttribute="bottom" id="xst-cW-MHP"/>
+                            <constraint firstItem="Szw-ty-Usc" firstAttribute="leading" secondItem="MAP-C1-Bxy" secondAttribute="leadingMargin" constant="-10" id="yej-yf-cPG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Szw-ty-Usc" id="LgN-Ub-wUF"/>
+                        <outlet property="imageView" destination="jdt-aN-tgP" id="q6V-Pz-cq9"/>
+                        <outlet property="shareButton" destination="Mle-fV-HKr" id="frS-4b-dod"/>
+                        <outlet property="titleLabel" destination="bag-cF-I6r" id="Puk-bB-j93"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DoF-fw-NV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2424.375" y="148.94366197183098"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add.png" width="128" height="128"/>
         <image name="arrow.png" width="128" height="128"/>
         <image name="back.png" width="128" height="128"/>
+        <image name="share.png" width="120" height="173"/>
     </resources>
 </document>

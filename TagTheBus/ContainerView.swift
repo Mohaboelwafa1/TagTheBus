@@ -10,17 +10,16 @@ import UIKit
 
 class ContainerView: UIViewController {
 
+    // refrences to objects in the interface builder
     
     @IBOutlet weak var middleLabel: UILabel!
     @IBOutlet weak var getCurrentLocationButton: UIButton!
-    //@IBOutlet weak var switchViewsSegmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var mainView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // navigate to the book list page with the full data
+        // navigate to the sations list page with the full data
         let listOfStations:ListView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listOfStations") as! ListView
         
         self.mainView.addSubview(listOfStations.view)
@@ -28,10 +27,6 @@ class ContainerView: UIViewController {
     
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
