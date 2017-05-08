@@ -25,6 +25,8 @@
 		59D1FA321EBAEC3F00706C04 /* TakePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D1FA311EBAEC3F00706C04 /* TakePictureView.swift */; };
 		59F30C811EC020F20008F1C3 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F30C801EC020F20008F1C3 /* share.png */; };
 		59F30C831EC021C70008F1C3 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F30C821EC021C70008F1C3 /* ImageViewer.swift */; };
+		59F30C851EC03C3B0008F1C3 /* DocumentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F30C841EC03C3B0008F1C3 /* DocumentHandler.swift */; };
+		59F30C871EC047940008F1C3 /* lunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F30C861EC047940008F1C3 /* lunchScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		59D1FA311EBAEC3F00706C04 /* TakePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureView.swift; sourceTree = "<group>"; };
 		59F30C801EC020F20008F1C3 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		59F30C821EC021C70008F1C3 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
+		59F30C841EC03C3B0008F1C3 /* DocumentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentHandler.swift; sourceTree = "<group>"; };
+		59F30C861EC047940008F1C3 /* lunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunchScreen.png; sourceTree = "<group>"; };
 		AA9DD8F16BC2A739471A2E45 /* Pods-TagTheBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagTheBus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TagTheBus/Pods-TagTheBus.debug.xcconfig"; sourceTree = "<group>"; };
 		F090151C25B7D20A9C94D5C6 /* Pods-TagTheBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TagTheBus.release.xcconfig"; path = "Pods/Target Support Files/Pods-TagTheBus/Pods-TagTheBus.release.xcconfig"; sourceTree = "<group>"; };
 		FB59A8EBC1BA2D47776F214B /* Pods_TagTheBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TagTheBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				59D1FA271EBAD53000706C04 /* ListOfStations.swift */,
+				59F30C841EC03C3B0008F1C3 /* DocumentHandler.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 		59CB1B4C1EB9BCBE00BCA526 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				59F30C861EC047940008F1C3 /* lunchScreen.png */,
 				59F30C801EC020F20008F1C3 /* share.png */,
 				59D1FA2F1EBAE47600706C04 /* back.png */,
 				59D1FA2B1EBAE00700706C04 /* add.png */,
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59F30C811EC020F20008F1C3 /* share.png in Resources */,
+				59F30C871EC047940008F1C3 /* lunchScreen.png in Resources */,
 				59CB1B421EB9BC7C00BCA526 /* LaunchScreen.storyboard in Resources */,
 				59D1FA301EBAE47600706C04 /* back.png in Resources */,
 				59CB1B3F1EB9BC7C00BCA526 /* Assets.xcassets in Resources */,
@@ -291,6 +298,7 @@
 				59D1FA2E1EBAE3FD00706C04 /* ListOfImages.swift in Sources */,
 				59B082401EBEFB07001A2C31 /* ImageModel.swift in Sources */,
 				59CB1B501EB9BF0B00BCA526 /* ListView.swift in Sources */,
+				59F30C851EC03C3B0008F1C3 /* DocumentHandler.swift in Sources */,
 				59D1FA281EBAD53000706C04 /* ListOfStations.swift in Sources */,
 				59D1FA321EBAEC3F00706C04 /* TakePictureView.swift in Sources */,
 				59D1FA2A1EBAD67500706C04 /* StationModel.swift in Sources */,

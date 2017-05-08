@@ -149,7 +149,7 @@ class ListOfImages: UIViewController , UITableViewDataSource , UITableViewDelega
         
         // set the image to the image view
         let fileManager = FileManager.default
-        let imagePAth = (self.getDirectoryPath() as NSString).appendingPathComponent("/\(stationID!)/\(currentStationImages[indexPath.row].name).jpg")
+        let imagePAth = (DocumentHandler.getDirectoryPath() as NSString).appendingPathComponent("/\(stationID!)/\(currentStationImages[indexPath.row].name).jpg")
         
         if fileManager.fileExists(atPath: imagePAth){
             cell.imageView?.image = UIImage(contentsOfFile: imagePAth)
@@ -204,12 +204,7 @@ class ListOfImages: UIViewController , UITableViewDataSource , UITableViewDelega
         
     }
     
-    // Get the path to document directory
-    func getDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
+
     
     
 }

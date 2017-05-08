@@ -26,7 +26,7 @@ class ImageViewer : UIViewController {
         
         // set the image to the image view
         let fileManager = FileManager.default
-        let imagePAth = (self.getDirectoryPath() as NSString).appendingPathComponent("/\(stationID!)/\(imageTitle!).jpg")
+        let imagePAth = (DocumentHandler.getDirectoryPath() as NSString).appendingPathComponent("/\(stationID!)/\(imageTitle!).jpg")
         if fileManager.fileExists(atPath: imagePAth){
                 self.imageView?.image = UIImage(contentsOfFile: imagePAth)
         }else{
@@ -52,12 +52,7 @@ class ImageViewer : UIViewController {
     }
     
     
-    // Get Documents path
-    func getDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
+   
     
     
 }

@@ -128,7 +128,7 @@ class TakePictureView: UIViewController , UITextFieldDelegate {
                 return true
                 
             }else{
-                print("Name is not valid.")
+                print("Title is not valid.")
                 return false
             }
             
