@@ -38,19 +38,33 @@
                                 <state key="normal" backgroundImage="arrow.png"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLX-Z9-rA6">
-                                <rect key="frame" x="0.0" y="67" width="320" height="433"/>
+                                <rect key="frame" x="0.0" y="99" width="320" height="449"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-YQ-g5G">
+                                <rect key="frame" x="100" y="63" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="List"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViewsFunction:" destination="BYZ-38-t0r" eventType="valueChanged" id="XR1-Hu-2Ak"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qLX-Z9-rA6" secondAttribute="bottom" constant="68" id="2M9-Fl-0wC"/>
+                            <constraint firstItem="Ayj-YQ-g5G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="84" id="1ay-VA-pzX"/>
+                            <constraint firstItem="qLX-Z9-rA6" firstAttribute="top" secondItem="Ayj-YQ-g5G" secondAttribute="bottom" constant="8" id="2xW-3e-wo2"/>
+                            <constraint firstItem="Ayj-YQ-g5G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9bR-o9-xza"/>
                             <constraint firstItem="Xpe-xv-3jS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C3d-Yi-EYs"/>
                             <constraint firstItem="Xpe-xv-3jS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="LrZ-QB-Ho1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ayj-YQ-g5G" secondAttribute="trailing" constant="83" id="UXI-M4-m5W"/>
                             <constraint firstItem="qLX-Z9-rA6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="bF8-uB-7oU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VoH-Rc-gU3" secondAttribute="trailing" id="fWr-7i-I4w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qLX-Z9-rA6" secondAttribute="trailing" constant="-16" id="nuK-Ts-QPf"/>
-                            <constraint firstItem="qLX-Z9-rA6" firstAttribute="top" secondItem="Xpe-xv-3jS" secondAttribute="bottom" constant="12" id="yDg-44-iNN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qLX-Z9-rA6" secondAttribute="bottom" constant="20" id="qku-zj-sVy"/>
+                            <constraint firstItem="Ayj-YQ-g5G" firstAttribute="top" secondItem="Xpe-xv-3jS" secondAttribute="bottom" constant="8" id="u94-Nn-qv3"/>
                             <constraint firstItem="VoH-Rc-gU3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="9" id="z6M-Vy-GAv"/>
                         </constraints>
                     </view>
@@ -58,6 +72,7 @@
                         <outlet property="getCurrentLocationButton" destination="VoH-Rc-gU3" id="zAA-kf-nbT"/>
                         <outlet property="mainView" destination="qLX-Z9-rA6" id="5NB-PG-bcL"/>
                         <outlet property="middleLabel" destination="Xpe-xv-3jS" id="dTE-qr-7zJ"/>
+                        <outlet property="viewSwitcherSegmentedController" destination="Ayj-YQ-g5G" id="B8k-Rf-vdh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,6 +115,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3L5-8M-BGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472.5" y="150"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="xOS-kG-oNU">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="3ML-FT-jWc" customClass="MapView" customModule="TagTheBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h1a-0q-Tsx"/>
+                        <viewControllerLayoutGuide type="bottom" id="09F-89-i1c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CFc-n1-8lQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYK-V9-vvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472" y="802"/>
         </scene>
         <!--List Of Images-->
         <scene sceneID="EcJ-4C-aXi">

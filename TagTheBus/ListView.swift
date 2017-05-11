@@ -49,8 +49,8 @@ class ListView: UIViewController , UITableViewDelegate , UITableViewDataSource {
         
         
         // asign the data to the labels
-        cell.textLabel?.text = ListOfStations.sharedInstance.stationsList[indexPath.row].city                 // City name
-        cell.detailTextLabel?.text = ListOfStations.sharedInstance.stationsList[indexPath.row].street_name    // Street name of the station
+        cell.textLabel?.text = ListOfStations.sharedInstance.stationsList[indexPath.row].street_name                 // City name
+        cell.detailTextLabel?.text = ListOfStations.sharedInstance.stationsList[indexPath.row].buses    // Street name of the station
         cell.accessoryType = .disclosureIndicator                                                             // -> the arrow in the cell
         
         return cell
